@@ -144,11 +144,10 @@ func executeQuery(cmd *cobra.Command, args []string) error {
 			return err
 		}
 
-		// todo: implement "just-print" mode for multiple time series
-		//if justPrint {
-		//	fmt.Printf("%v", timeSeries)
-		//	return nil
-		//}
+		if justPrint {
+			fmt.Printf("%v", timeSeries)
+			continue
+		}
 
 		// key helps to fill out legend.
 		// Here we are grabbing the pod name.
